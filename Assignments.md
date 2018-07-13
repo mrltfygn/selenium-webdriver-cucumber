@@ -68,13 +68,13 @@ Random id's are occuring more often in websites, so is your test ready for this?
 
 1. Open **src/main/resources/index.html** and search for below code (near line 361);
     ```javascript
-    $scope.rid = 'cg';
-    $scope.rid2 = 'cg';
+    $scope.rid = '';
+    $scope.rid2 = '';
     ```
 2. Replace the code to;
     ```javascript
-    $scope.rid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
-    $scope.rid2 = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
+    $scope.rid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + ':';
+    $scope.rid2 = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + ':';
     ```
 3. Run your scenario's again, fix what you need to fix.
 
