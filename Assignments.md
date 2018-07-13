@@ -75,3 +75,19 @@ All the files which you will need to edit in these assignments are located in **
 ## Exercise 10
 
 1. Use faker to generate random data for the personal data you created in Exercise 3.
+
+## Exercise 11 (turn it up a notch)
+
+Random id's are occuring more often in websites, so is your test ready for this?
+
+1. Open **src/main/resources/index.html** and search for below code (near line 361);
+    ```javascript
+    $scope.rid = 'cg';
+    $scope.rid2 = 'cg';
+    ```
+2. Replace the code to;
+    ```javascript
+    $scope.rid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
+    $scope.rid2 = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
+    ```
+3. Run your scenario's again, fix what you need to fix.
