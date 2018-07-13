@@ -60,23 +60,9 @@ All the files which you will need to edit in these assignments are located in **
 2. In Browser.properties you can choose in which webbrowser you want to run your tests. 
    Make sure your scenarios work on Firefox, Chrome and InternetExplorer using the same code.
 
+# Turn it up a notch
+
 ## Exercise 8
-
-1. Create a BasePage as explained in [TAGuidelines.md](TAGuidelines.md)
-2. Create 4 different pages, 1 for each html page in the assignment and fill it with the selectors as shown in the coding guidelines of [TAGuidelines.md](TAGuidelines.md). 
-   Make sure your new pages extend the BasePage.
-3. In your steps file, use functions on the pages to interact with the elements.
-
-## Exercise 9
-
-1. Reduce your Gherkin to **Given When Then** (preferrably 3 lines, max 4/5 lines) such that the core of the test is clear.
-   This means that each method in your step function will do more than 1 action. In this way, your code has become more readable.
-   
-## Exercise 10
-
-1. Use faker to generate random data for the personal data you created in Exercise 3.
-
-## Exercise 11 (turn it up a notch)
 
 Random id's are occuring more often in websites, so is your test ready for this?
 
@@ -91,3 +77,20 @@ Random id's are occuring more often in websites, so is your test ready for this?
     $scope.rid2 = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
     ```
 3. Run your scenario's again, fix what you need to fix.
+
+## Exercise 9
+
+1. Use faker to generate random data for the personal data you created in Exercise 3.
+
+## Exercise 10
+
+1. Create a BasePage as explained in [TAGuidelines.md](TAGuidelines.md)
+2. Create 4 different pages, 1 for each html page in the assignment and fill it with the selectors as shown in the coding guidelines of [TAGuidelines.md](TAGuidelines.md). 
+   Make sure your new pages extend the BasePage.
+3. In your steps file, use functions on the pages to interact with the elements.
+
+## Exercise 11
+
+1. Reduce your Gherkin to **Given When Then** (preferrably 3 lines, max 4/5 lines) such that the core of the test is clear.
+   This means that each method in your step function will do more than 1 action. In this way, your code has become more readable.
+   
