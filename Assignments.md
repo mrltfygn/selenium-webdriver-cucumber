@@ -85,7 +85,7 @@ Random id's are occuring more often in websites, so is your test ready for this?
 
 ## Exercise 9
 
-1. Use faker to generate random data for the personal data you created in Exercise 3.
+1. Use [faker](https://github.com/DiUS/java-faker) to generate random data for the personal data you created in Exercise 3.
 
 ## Exercise 10
 
