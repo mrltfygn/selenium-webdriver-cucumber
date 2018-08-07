@@ -57,6 +57,11 @@ All the files which you will need to edit in these assignments are located in **
 1. The website is responding too fast for your eyes to follow everything. 
    We can add screenshots at key points to see what is happening on each page. 
    Try adding screenshots at key points of your scenario and save these to view later on.
+   ```
+    //Store a screenshot in my temp folder
+    File scrFile = ((TakesScreenshot) browser).getScreenshotAs(OutputType.FILE);
+    System.out.println("Screenshot stored at: " + scrFile.getAbsolutePath());
+    ```
 2. In Browser.properties you can choose in which webbrowser you want to run your tests. 
    Make sure your scenarios work on Firefox, Chrome and InternetExplorer using the same code.
 
