@@ -60,7 +60,7 @@ All the files which you will need to edit in these assignments are located in **
    ```
     //Store a screenshot in my temp folder
     File scrFile = ((TakesScreenshot) browser).getScreenshotAs(OutputType.FILE);
-    System.out.println("Screenshot stored at: " + scrFile.getAbsolutePath());
+    FileUtils.copyFile(source, new File("C:\\temp\\screenshot.jpg"));
     ```
 2. In Browser.properties you can choose in which webbrowser you want to run your tests. 
    Make sure your scenarios work on Firefox, Chrome and InternetExplorer using the same code.
