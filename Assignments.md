@@ -63,7 +63,7 @@ All the files which you will need to edit in these assignments are located in **
     FileUtils.copyFile(source, new File("C:\\temp\\screenshot" + System.currentTimeMillis() + ".jpg"));
     ```
 2. In Browser.properties you can choose in which webbrowser you want to run your tests. 
-   Make sure your scenarios work on Firefox, Chrome and InternetExplorer using the same code.
+   Make sure your scenarios work on Firefox (firefox), Chrome (chrome) and InternetExplorer (ie) using the same code.
 
 # Turn it up a notch
 
