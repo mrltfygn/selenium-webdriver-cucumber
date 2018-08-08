@@ -57,7 +57,7 @@ All the files which you will need to edit in these assignments are located in **
 1. The website is responding too fast for your eyes to follow everything. 
    We can add screenshots at key points to see what is happening on each page. 
    Try adding screenshots at key points of your scenario and save these to view later on.
-   ```
+   ```java 
     //Store a screenshot in my temp folder
     File scrFile = ((TakesScreenshot) browser).getScreenshotAs(OutputType.FILE);
     FileUtils.copyFile(source, new File("C:\\temp\\screenshot" + System.currentTimeMillis() + ".jpg"));
