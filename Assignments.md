@@ -39,12 +39,13 @@ All the files which you will need to edit in these assignments are located in **
 
 ## Exercise 5
 
-1. Navigate back to the first page of your loan request.
-2. In loan.feature, create a new step after "**Given** I have opened the loan request page" to click the different options under "Why do you need a loan?".
+1. Create a new scenario in the same feature file.
+2. Add the already existing step "**Given** I have opened the loan request page".
+3. Create a new step after "**Given** I have opened the loan request page" to click the different options under "Why do you need a loan?".
 > Use the Cheatsheet.docx to find good selectors for the buttons. You can also look into xpath selectors for this assignment.
-3. Create a step to close the pop-up. What issues do you face?
+4. Create a step to close the pop-up. What issues do you face?
 > Use smart waits if elements are not immediately available.
-4. Use Scenario Outlines to execute this scenario several times with different data.
+5. Use Scenario Outlines to execute this scenario several times with different data.
 
 ## Exercise 6
 
