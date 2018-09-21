@@ -1,23 +1,25 @@
 # Assignments
 
-All the files which you will need to edit in these assignments are located in **src/test/java/com/capgemini** or **src/test/resources/features**.
-> It might be a good idea to open the local html file that is used in the first assignments in a chrome browser (**src/main/resources/index.html**).
+All the files which you will need to edit in these assignments are located in **src/test/java/com/capgemini/steps** or **src/test/resources/features**.
+> In IntelliJ, navigate to **src/main/java/com.capgemini/App" and run App.Java.
+> In a chrome browser navigate to "localhost:8080".
 
 ## Exercise 1
 
  1. In **loan.feature**, Right-click on the scenario name 'request a car loan' and choose 'Run Scenario...'
  2. As you can see the webpage gives an error message because the desired amount to borrow is lower than the minimum. 
     Update the step "**And** the amount I want to borrow is '1000'" so that this error message is no longer given. Run the scenario to check that it works.
-> The steps are located in **steps/CGLoansSteps**
+> The steps are located in **steps/loan_Steps**
  3. Create the step "**And** I continue to explanation" (just remove the #). The background color of the step will turn into brown box, this means that there is no java connected to this step. 
     Use Alt + Enter, choose 'Create step definition', choose loan_steps (com.capgemini.steps).
  4. Check the generated java code, remove the auto generated `throw new PendingException();`. 
     This exception is generated to make sure that you understand java code a bit before you can run a successful execution.
- 5. In IntelliJ, navigate to **index.html**, right-click on it and select 'Open in browser -> Chrome'. 
+ 5. Use copy paste from the code inside `iSelectLoanTypeCarLoan()` method. You will need to change the CSS selector to find the proper element.
+ 6. Switch to your Chrome browser (where you have opened "localhost:8080")
     In Chrome right-click the "Continue to explanation" button and select "Inspect" to identify the selector for this button.
- 6. In IntelliJ use copy paste from the code in `iSelectLoanTypeCarLoan()` method, change the CSS selector to the selector you found in Chrome.
- 7. Is `.click()` the right method to use here?
- 8. Run the scenario
+ 7. Copy the CSS selector and replace the CSS selector in IntelliJ (see step 5).
+ 8. Is `.click()` the right method to use here?
+ 9. Run the scenario
 
 ## Exercise 2
 
@@ -90,13 +92,12 @@ Random id's are occuring more often in websites, so is your test ready for this?
 
 ## Exercise 10
 
+1. Reduce your Gherkin to **Given When Then** (preferrably 3 lines, max 4/5 lines) such that the core of the test is clear.
+   This means that each method in your step function will do more than 1 action. In this way, your code has become more readable.
+
+## Exercise 11
+
 1. Create a BasePage as explained in [TAGuidelines.md](TAGuidelines.md)
 2. Create 4 different pages, 1 for each html page in the assignment and fill it with the selectors as shown in the coding guidelines of [TAGuidelines.md](TAGuidelines.md). 
    Make sure your new pages extend the BasePage.
 3. In your steps file, use functions on the pages to interact with the elements.
-
-## Exercise 11
-
-1. Reduce your Gherkin to **Given When Then** (preferrably 3 lines, max 4/5 lines) such that the core of the test is clear.
-   This means that each method in your step function will do more than 1 action. In this way, your code has become more readable.
-   
