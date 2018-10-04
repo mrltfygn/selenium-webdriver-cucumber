@@ -1,7 +1,7 @@
 # Assignments
 
 All the files which you will need to edit in these assignments are located in **src/test/java/com/capgemini/steps** or **src/test/resources/features**.
-> In IntelliJ, navigate to **src/main/java/com.capgemini/App" and run App.Java.
+> In IntelliJ, navigate to **src/main/java/com.capgemini/App** and run App.Java.
 > In a chrome browser navigate to "localhost:8080".
 
 ## Exercise 1
