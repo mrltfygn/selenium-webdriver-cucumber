@@ -12,19 +12,7 @@ public class BrowserFactory {
 
     private static OurWebDriver browser;
 
-    public static OurFirefoxDriver createFfDriver() throws MalformedURLException {
-        return OurFirefoxDriver.getBrowser();
-    }
-
-    public static OurChromeDriver createChromeDriver() throws MalformedURLException {
-        return OurChromeDriver.getBrowser();
-    }
-
-    public static OurIEDriver createIEDriver() throws MalformedURLException {
-        return OurIEDriver.getBrowser();
-    }
-
-    public static OurWebDriver getWebDriver() throws MalformedURLException {
+    public static OurWebDriver getWebDriver() {
         final String browserType = getBrowserType();
         return getBrowserOfType(browserType);
     }
