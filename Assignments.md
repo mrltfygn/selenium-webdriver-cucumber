@@ -25,8 +25,7 @@ All the files which you will need to edit in these assignments are located in **
 
 1. On the second page, check if the 'Chosen loan type' and 'Amount to borrow' values are what you expect.
 > You can use Assert.assertEquals() to verify if the shown values are correct.
-2. Run the scenario. Is your css selector working?
-> The CheatSheet.docx has tips for finding unique selectors.
+2. Run the scenario.
 3. Create steps that allows you to continue to the personal data page
 
 ## Exercise 3
@@ -57,16 +56,9 @@ All the files which you will need to edit in these assignments are located in **
 
 ## Exercise 7
 
-1. The website is responding too fast for your eyes to follow everything. 
-   We can add screenshots at key points to see what is happening on each page. 
-   Try adding screenshots at key points of your scenario and save these to view later on.
-   ```java 
-    //Store a screenshot in my temp folder
-    File scrFile = ((TakesScreenshot) browser).getScreenshotAs(OutputType.FILE);
-    FileUtils.copyFile(source, new File("C:\\temp\\screenshot" + System.currentTimeMillis() + ".jpg"));
-    ```
-2. In Browser.properties you can choose in which webbrowser you want to run your tests. 
+1. In Browser.properties you can choose in which webbrowser you want to run your tests. 
    Make sure your scenarios work on Firefox (firefox), Chrome (chrome) and InternetExplorer (ie) using the same code.
+
 
 # Turn it up a notch
 
@@ -90,12 +82,26 @@ Random id's are occuring more often in websites, so is your test ready for this?
 
 1. Use [faker](https://github.com/DiUS/java-faker) to generate random data for the personal data you created in Exercise 3.
 
+
 ## Exercise 10
+
+1. The website is responding too fast for your eyes to follow everything. 
+   We can add screenshots at key points to see what is happening on each page. 
+   Try adding screenshots at key points of your scenario and save these to view later on.
+   ```java 
+    //Store a screenshot in my temp folder
+    File scrFile = ((TakesScreenshot) browser).getScreenshotAs(OutputType.FILE);
+    FileUtils.copyFile(source, new File("C:\\temp\\screenshot" + System.currentTimeMillis() + ".jpg"));
+    ```
+
+
+
+## Exercise 11
 
 1. Reduce your Gherkin to **Given When Then** (preferrably 3 lines, max 4/5 lines) such that the core of the test is clear.
    This means that each method in your step function will do more than 1 action. In this way, your code has become more readable.
 
-## Exercise 11
+## Exercise 12
 
 1. Create a BasePage as explained in [TAGuidelines.md](TAGuidelines.md)
 2. Create 4 different pages, 1 for each html page in the assignment and fill it with the selectors as shown in the coding guidelines of [TAGuidelines.md](TAGuidelines.md). 
