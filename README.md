@@ -14,7 +14,7 @@ Cuke-Up Your Tests
 
 - Start up IntelliJ
 - Choose 'Check out from Version Control' -> Git
-- Fill in URL "https://github.com/jgelon/cukeupyourtests.git"
+- Fill in URL "https://github.com/mazininaad/cukeupyourtests.git"
 - Press Clone
 - When the following pop-up comes up select 'No': 
 
