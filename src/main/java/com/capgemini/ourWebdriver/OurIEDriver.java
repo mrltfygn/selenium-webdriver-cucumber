@@ -33,32 +33,32 @@ public class OurIEDriver extends InternetExplorerDriver implements OurWebDriver 
     }
 
     public WebElement waitForElement(final String selector) {
-        final WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+        final WebDriverWait wait = new WebDriverWait(browser, EXPLICIT_WAIT_TIMEOUT);
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(selector)));
     }
 
     public WebElement waitForElement(final By by) {
-        final WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+        final WebDriverWait wait = new WebDriverWait(browser, EXPLICIT_WAIT_TIMEOUT);
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
     public WebElement waitForVisible(final String selector) {
-        final WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+        final WebDriverWait wait = new WebDriverWait(browser, EXPLICIT_WAIT_TIMEOUT);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(selector)));
     }
 
     public WebElement waitForVisible(final By by) {
-        final WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+        final WebDriverWait wait = new WebDriverWait(browser, EXPLICIT_WAIT_TIMEOUT);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
     public WebElement waitForClickable(final String selector) {
-        final WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+        final WebDriverWait wait = new WebDriverWait(browser, EXPLICIT_WAIT_TIMEOUT);
         return wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(selector)));
     }
 
     public WebElement waitForClickable(final By by) {
-        final WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+        final WebDriverWait wait = new WebDriverWait(browser, EXPLICIT_WAIT_TIMEOUT);
         return wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
@@ -67,7 +67,7 @@ public class OurIEDriver extends InternetExplorerDriver implements OurWebDriver 
     }
 
     public void waitForAjax() {
-        final WebDriverWait webDriverWait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+        final WebDriverWait webDriverWait = new WebDriverWait(browser, EXPLICIT_WAIT_TIMEOUT);
         webDriverWait.until(new ExpectedCondition<Boolean>() {
             public Boolean apply(final WebDriver driver) {
                 final String scriptToExecute =
