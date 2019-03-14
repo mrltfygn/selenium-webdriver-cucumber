@@ -14,7 +14,7 @@ All the files which you will need to edit in these assignments are located in **
     Use Alt + Enter, choose 'Create step definition', choose loan_steps (com.capgemini.steps).
  4. Check the generated java code, remove the auto generated `throw new PendingException();`. 
     This exception is generated to make sure that you understand java code a bit before you can run a successful execution.
- 5. Use copy paste from the code inside `iSelectLoanTypeCarLoan()` method. You will need to change the CSS selector to find the proper element.
+ 5. Use copy paste from the code inside `iSelectLoanType()` method. You will need to change the CSS selector to find the proper element.
  6. Switch to your Chrome browser (where you have opened "localhost:8080")
     In Chrome right-click the "Continue to explanation" button and select "Inspect" to identify the selector for this button.
  7. Copy the CSS selector and replace the CSS selector in IntelliJ (see step 5).
@@ -42,11 +42,12 @@ All the files which you will need to edit in these assignments are located in **
 
 1. Create a new scenario in the same feature file.
 2. Add the already existing step "**Given** I have opened the loan request page".
-3. Create a new step after "**Given** I have opened the loan request page" to click the different options under "Why do you need a loan?".
+3. Create a new step after "**Given** I have opened the loan request page" to click an option under "Why do you need a loan?".
 > Use the Cheatsheet.docx to find good selectors for the buttons. You can also look into xpath selectors for this assignment.
 4. Create a step to close the pop-up. What issues do you face?
 > Use smart waits if elements are not immediately available.
-5. Use Scenario Outlines to execute this scenario several times with different data.
+5. Parameterize the step so that you can click different options using the same step.
+6. Use Scenario Outlines to execute this scenario several times with different data.
 
 ## Exercise 6
 
