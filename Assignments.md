@@ -17,7 +17,7 @@
     Use Alt + Enter, choose 'Create step definition', choose loan_steps (com.capgemini.steps).
  4. Check the generated java code, remove the auto generated `throw new PendingException();`. 
     This exception is generated to make sure that you understand java code a bit before you can run a successful execution.
- 5. Inside the body of the newly generated method `**public void** iContinueToExplanation()`, copy paste the code inside the `iSelectLoanType()` method. You will need to change the CSS selector to find the proper element. This is explained in the next steps.
+ 5. Inside the body of the newly generated method `public void iContinueToExplanation()`, copy paste the code inside the `iSelectLoanType()` method. You will need to change the CSS selector to find the proper element. This is explained in the next steps.
  6. Switch to your Chrome browser (where you have opened "localhost:8080")
     In Chrome right-click the "Continue to explanation" button and select "Inspect" to identify the selector for this button.
  7. Copy the CSS selector and replace the CSS selector in IntelliJ (see step 5).
