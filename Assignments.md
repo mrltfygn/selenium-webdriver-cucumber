@@ -1,8 +1,11 @@
 # Assignments
 
-All the files which you will need to edit in these assignments are located in **src/test/java/com/capgemini/steps** or **src/test/resources/features**.
-> In IntelliJ, navigate to **src/main/java/com.capgemini/App** and run App.Java.
-> In a chrome browser navigate to "localhost:8080".
+> All the files which you will need to edit in these assignments are located in **src/test/java/com/capgemini/steps** or **src/test/resources/features**.
+
+## Getting started
+
+1. In IntelliJ, navigate to **src/main/java/com.capgemini/App** and run App.Java.
+2. In a chrome browser navigate to "localhost:8080".
 
 ## Exercise 1
 
@@ -10,11 +13,11 @@ All the files which you will need to edit in these assignments are located in **
  2. As you can see the webpage gives an error message because the desired amount to borrow is lower than the minimum. 
     Update the step "**And** the amount I want to borrow is '1000'" so that this error message is no longer given. Run the scenario to check that it works.
 > The steps are located in **steps/loan_Steps**
- 3. Create the step "**And** I continue to explanation" (just remove the #). The background color of the step will turn into brown box, this means that there is no java connected to this step. 
+ 3. Create the step "**And** I continue to explanation" (just remove the # in the feature file). The background color of the step will turn into brown box, this means that there is no java connected to this step. 
     Use Alt + Enter, choose 'Create step definition', choose loan_steps (com.capgemini.steps).
  4. Check the generated java code, remove the auto generated `throw new PendingException();`. 
     This exception is generated to make sure that you understand java code a bit before you can run a successful execution.
- 5. Use copy paste from the code inside `iSelectLoanType()` method. You will need to change the CSS selector to find the proper element.
+ 5. Inside the body of the newly generated method `public void iContinueToExplanation()`, copy paste the code inside the `iSelectLoanType()` method. You will need to change the CSS selector to find the proper element. This is explained in the next steps.
  6. Switch to your Chrome browser (where you have opened "localhost:8080")
     In Chrome right-click the "Continue to explanation" button and select "Inspect" to identify the selector for this button.
  7. Copy the CSS selector and replace the CSS selector in IntelliJ (see step 5).
@@ -23,10 +26,13 @@ All the files which you will need to edit in these assignments are located in **
 
 ## Exercise 2
 
-1. On the second page, check if the 'Chosen loan type' and 'Amount to borrow' values are what you expect.
-> You can use Assert.assertEquals() to verify if the shown values are correct.
-2. Run the scenario.
-3. Create steps that allows you to continue to the personal data page
+On the second page, we want to check if the 'Chosen loan type' and 'Amount to borrow' values are what we expect.
+
+1. Create a new step in your feature file in which you define what you expect to see for chosen loan type and amount to borrow.
+2. Use the autocomplete function in IntelliJ to help create the cucumber code and the method for this step in the Loan_Steps file.
+3. Use the `Assert.assertEquals()` method to verify if the shown values are correct.
+4. Run the scenario.
+5. Create steps that allows you to continue to the personal data page
 
 ## Exercise 3
 
@@ -43,7 +49,7 @@ All the files which you will need to edit in these assignments are located in **
 1. Create a new scenario in the same feature file.
 2. Add the already existing step "**Given** I have opened the loan request page".
 3. Create a new step after "**Given** I have opened the loan request page" to click an option under "Why do you need a loan?".
-> Use the Cheatsheet.docx to find good selectors for the buttons. You can also look into xpath selectors for this assignment.
+> In some cases it is just not possible to find a unique selector for the element you want to interact with. In these cases, the element text can be used to identify the element. Use the Cheatsheet.docx for help on how to click the button with the desired text.
 4. Create a step to close the pop-up. What issues do you face?
 > Use smart waits if elements are not immediately available.
 5. Parameterize the step so that you can click different options using the same step.
@@ -81,10 +87,25 @@ Random id's are occuring more often in websites, so is your test ready for this?
 
 ## Exercise 9
 
-1. Use [faker](https://github.com/DiUS/java-faker) to generate random data for the personal data you created in Exercise 3.
-
+1. Create a new scenario with steps to open the personal data page.
+2. Create a new step that allows you to fill in your personal data with a single step. Use a cucumber datatable to pass your test data to the steps file.
+> Use the first two methods explained on [this page](http://www.thinkcode.se/blog/2014/06/30/cucumber-data-tables) to experiment with the different methods of passing data to your steps file.
 
 ## Exercise 10
+
+1. Create a new scenario with steps to open the personal data page.
+2. In your project structure, create a new package in **src/test/java/com/capgemini/** called **helpers** (a package is a folder).
+3. In this package create a new Java class and give it the name **PersonalData**.
+4. Add all the fields that you need to fill in the PersonalData page as private variables to the class `PersonalData`.
+5. Create a new step in your feature file to pass on PersonalData to your steps file.
+> You can now use the 3rd method described on [this page](http://www.thinkcode.se/blog/2014/06/30/cucumber-data-tables) to pass on the personal data to the steps file.
+
+## Exercise 11
+
+1. Use [faker](https://github.com/DiUS/java-faker) to generate random data for the personal data you created in Exercise 10.
+
+
+## Exercise 12
 
 1. The website is responding too fast for your eyes to follow everything. 
    We can add screenshots at key points to see what is happening on each page. 
@@ -97,12 +118,12 @@ Random id's are occuring more often in websites, so is your test ready for this?
 
 
 
-## Exercise 11
+## Exercise 13
 
 1. Reduce your Gherkin to **Given When Then** (preferrably 3 lines, max 4/5 lines) such that the core of the test is clear.
    This means that each method in your step function will do more than 1 action. In this way, your code has become more readable.
 
-## Exercise 12
+## Exercise 14
 
 1. Create a BasePage as explained in [TAGuidelines.md](TAGuidelines.md)
 2. Create 4 different pages, 1 for each html page in the assignment and fill it with the selectors as shown in the coding guidelines of [TAGuidelines.md](TAGuidelines.md). 
