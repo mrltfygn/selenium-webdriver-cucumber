@@ -2,7 +2,7 @@
 
 There are different ways to handle data tables in cucumber scenarios. Which method of data table you use depends on your project and complexity of your test. In this article I will show some methods with their examples. I will also discuss the advantages and disadvantages of each method. In the end, it is up to you to decide which method best suits your needs.
 
-### Method 1: List
+## Method 1: List
 You can add data to your Gherkin as a list. 
 This method is best used when you have a small data set of the same data type and the order of the data is unlikely to change or not important (for example: a list of numbers that you want to loop through).
 For example:
@@ -31,7 +31,7 @@ This is probably the simplest method to implement Data tables. In this case we h
 &nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; Limited to single data type in list  
 &nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; You have to keep track of the order of your data in the list  
 
-### Method 2: Map
+## Method 2: Map
 Instead of a list, we can also use a Map. This solves the problem of keeping track of the order of the data in your list. 
 This method is best used when you have a small/medium data set of the same data type and each data value has it's own function.
 In Gherkin this would look like this:
@@ -57,7 +57,7 @@ Because we are now using a map, the order of the data is no longer an issue. We 
 &nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; The order of your data is not an issue  
 &nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; Limited to single data type in list  
 
-### Method 3: Custom object
+## Method 3: Custom object
 You can also create a custom object for your Data table. A great advantage of using this method is that you can handle different data types in your data table. For example: if we want to create data for a product in a store we can create an object called Product.
 ```java
 public class Product {
@@ -137,3 +137,94 @@ public void methodToDoSomethingWithCustomObject(List<Product> allProducts) {
 &nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; The order of your data is not an issue  
 &nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; Multiple data objects in a single step  
 &nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; Bit more complex to implement  
+
+## Method 4: Custom objects with fake data
+This is a more complex usage of Data tables where I no longer wanted to create new test data every time I ran my test. It is actually an extension of Method 3. This method is highly recommended when working in a test environment where your testdata has to be unique each time you run your test (for example when filling in forms) or when working with large data sets. It allows you to control the values that you want and randomize other values.
+
+Like we did in Method 3, we need to create an object. But we now add a Constructor which generates our fake data. I use the [java faker package](https://github.com/DiUS/java-faker) to generate the fake data. For example:
+```java
+public class ContactFormData {
+    private String name;
+    private String email;
+    private String message;
+    
+    public ContactFormData() {
+        Faker faker = new Faker();
+        
+        name = faker.name().fullName();
+        email = faker.internet().safeEmailAddress();
+        message = faker.gameOfThrones().quote();
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+    
+    public String getMessage() {
+        return message;
+    }
+}
+```
+In Gherkin we give values only to the fields that we want to control the values of:
+```gherkin
+When I fill out the contact form
+  | Name        |
+  | Mazin Inaad |
+```
+And then in our steps file, we generate the rest of the data:
+```java
+@When("^I fill out the contact form$")
+public void methodToDoSomethingWithCustomObject(List<ContactFormData> formDataList) {
+    ContactFormData initialData = formDataList.get(0);
+    ContactFormData finalData = ContactFormData.generateRemainingData(initialData);
+    // Now we can do something with the final data
+}
+```
+As you can see I am calling the method `generateRemainingData` in ContactFormData. You can add this method to the `ContactFormData` class with the following code:
+```java
+public static ContactFormData generateRemainingData(ContactFormData initialData) {
+    return DataHelper.generateRemainingData(initialData, () -> new ContactFormData());
+}
+```
+What this method does is it calls the more generic function in my `DataHelper` class (which we have not yet created). In calling this function it passes on the initialData that I filled in in my Gherkin and it passes on a new data object using the constructor that generates the fake data. So all we need now is the generic `generateRemainingData` method somewhere (In my case it is located in a class called DataHelper. You can place this method anywhere you want)
+```java
+/**
+* This function fills data for the fields that have not been defined in the initialdata at the gherkin level.
+* The data is not generated in this function itself, but by the supplier which should supply the new object with
+* generated faker data.
+*
+* Created by: Mazin Inaad
+* 
+* @param initialData the initial data.
+* @param newDataSupplier the new daya supplier.
+* @param <T> the type.
+* @return object with generated fake data.
+*/
+public static <T> T generateRemainingData(final T initialData, final Supplier<T> newDataSupplier) {
+   final T result = newDataSupplier.get();
+   final Field[] fields = initialData.getClass().getDeclaredFields();
+   try {
+       for (Field f : fields) {
+           f.setAccessible(true);
+           if (f.get(initialData) != null) {
+               f.set(result, f.get(initialData));
+           }
+       }
+   } catch (IllegalAccessException e) {
+       Assert.fail("Error occured in generateRemainingData while trying to copy data from initial data to generated data");
+   }
+   return result;
+}
+```
+This method for Data tables in Cucumber is also very handy when you have large data sets. Since you only fill in some fields in your Gherkin and generate data for the rest of the fields, your feature file is not cluttered with unnecessary information.
+
+**Summary:**  
+&nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; Possibility to generate fake data  
+&nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; Multiple data types possible  
+&nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; The order of your data is not an issue  
+&nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; Multiple data objects in a single step  
+&nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; Complexity of code    
