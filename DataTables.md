@@ -25,10 +25,10 @@ Instead of strings you can ofcourse switch the data type of the list to any data
 
 This is probably the simplest method. However, the disadvantage of this method is that you can only use one data type. So only Strings, integers, booleans, etc. You cannot mix the different data types into the same list. Furthermore, you are dependent on the order of your data in your list. If you want to add an item to a position other then the end of the list, you will need to update your indexes of the rest.
 
-**So to summurize:**
-&nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; Simple to implement
-&nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; Limited to single data type in list
-&nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; You have to keep track of the order of your data in the list
+**To summurize:**  
+&nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; Simple to implement  
+&nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; Limited to single data type in list  
+&nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; You have to keep track of the order of your data in the list  
 
 ### Method 2: Map
 Instead of a list, we can also you a Map. This solves the problem of keeping track of the order of the data in your list. In Gherkin this would look like this:
@@ -49,7 +49,7 @@ public void myMethodToDoSomethingWithTheMap(Map<String, String> myMap) {
 ```
 Because we are now using a map, the order of the data is no longer an issue. We can access the data by simply calling the key which is the first column of the data. However, we can still only have the same data type in the entire map. In this case `<String, String>`.
 
-**So to summurize:**
-&nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; Fairly simple to implement
-&nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; The order of your data is not an issue
-&nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; Limited to single data type in list
+**To summurize:**  
+&nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; Fairly simple to implement  
+&nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; The order of your data is not an issue  
+&nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; Limited to single data type in list  
