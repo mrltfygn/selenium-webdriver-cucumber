@@ -72,7 +72,7 @@ Given a product
   | Name    | AmountInStock | Price |
   | Cookies | 200           | 1.42  |
 ```
-> It is important that the names in the top row are an exact match with your field names of your custom object. Cucumber is only forgiving in capitalization of the first letter. 
+> It is important that the names in the top row are an exact match with your field names of your custom object. Cucumber is only forgiving in capitalization of the first letter.  
 > Also note that the topmost row now has the "keys" and the second row contains the data where in Method 2 the first column was the key and the second column the value.
 
 In your step file, this data can be read as follows:
@@ -115,7 +115,7 @@ public void methodToDoSomethingWithCustomObject(List<Product> myData) {
 }
 ```
 
-As you can see we can now use multiple data types in our data input and the order is not a problem. Another advantage is that you can work with multiple data objects like this:
+As you can see we can now use multiple data types in our data input (Strings, Integers and Doubles in our case). Another advantage is that you can work with multiple data objects like this:
 ```gherkin
 Given a product
   | Name    | AmountInStock | Price |
