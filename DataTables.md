@@ -52,4 +52,4 @@ Because we are now using a map, the order of the data is no longer an issue. We 
 **To summurize:**  
 &nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; Fairly simple to implement  
 &nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; The order of your data is not an issue  
-&nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; Limited to single data type in list  
+&nbsp;&nbsp;&nbsp;&nbsp;**\-**&nbsp; Limited to single data type in map  
