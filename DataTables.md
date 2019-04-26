@@ -190,7 +190,7 @@ public static ContactFormData generateRemainingData(ContactFormData initialData)
     return DataHelper.generateRemainingData(initialData, () -> new ContactFormData());
 }
 ```
-What this method does is it calls the more generic function in my `DataHelper` class (which we have not yet created). In calling this function it passes on the initialData that I filled in in my Gherkin and it passes on a new data object using the constructor that generates the fake data. So all we need now is the generic `generateRemainingData` method somewhere (In my case it is located in a class called DataHelper. You can place this method anywhere you want)
+What this method does is it calls the generic function in my `DataHelper` class (which we have not yet created). In calling this function it passes on the initialData that I filled in in my Gherkin and it passes on a new data object using the constructor that generates the fake data. So all we need now is the generic `generateRemainingData` method somewhere (In my case it is located in a class called DataHelper. You can place this method anywhere you want). This generic method only needs to be defined once for  your entire project since it works with generic class types.
 ```java
 /**
 * This function fills data for the fields that have not been defined in the initialdata at the gherkin level.
