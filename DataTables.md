@@ -50,8 +50,7 @@ public void myMethodToDoSomethingWithTheMap(Map<String, String> myMap) {
     System.out.println(myMap.get("Name"));
 }
 ```
-Because we are now using a map, the order of the data is no longer an issue. We can access the data by simply calling the key which is the first column of the data. However, we can still only have the same data type in the entire map. In this case `<String, String>`. Keep in mind that Keys in the Map need to be unique[^1].
-[^1]: https://docs.oracle.com/javase/8/docs/api/java/util/Map.html
+Because we are now using a map, the order of the data is no longer an issue. We can access the data by simply calling the key which is the first column of the data. However, we can still only have the same data type in the entire map. In this case `<String, String>`. Keep in mind that [Keys in the Map need to be unique](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html).
 
 **Summary:**  
 &nbsp;&nbsp;&nbsp;&nbsp;**\+**&nbsp; Fairly simple to implement  
