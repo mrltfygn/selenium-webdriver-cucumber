@@ -30,13 +30,15 @@ On the second page, we want to check if the 'Chosen loan type' and 'Amount to bo
 
 1. Create a new step in your feature file in which you define what you expect to see for chosen loan type and amount to borrow.
 2. Use the autocomplete function in IntelliJ to help create the cucumber code and the method for this step in the Loan_Steps file.
-3. Use the `Assert.assertEquals()` method to verify if the shown values are correct.
-4. Run the scenario.
-5. Create steps that allows you to continue to the personal data page
+3. In the created method, initiate variables to store the expected values in (expectedLoanType, expectedAmountToBorrow)
+4. Now try to retrieve the actual values for chosen loan type and amount to borrow from the website. Store these values in variables as well.
+5. Use the `Assert.assertEquals()` method to verify if the shown values are correct.
+6. Run the scenario. Is your assertion working? How can you test this?
+7. Create steps that allows you to continue to the personal data page
 
 ## Exercise 3
 
-1. Create new steps for every field on the page. For every step, change the selector and use the correct interaction.
+1. Create new steps for every field on the personal data page. For every step, change the selector and use the correct interaction.
 2. Can you upload a file?
 
 ## Exercise 4
@@ -63,8 +65,9 @@ On the second page, we want to check if the 'Chosen loan type' and 'Amount to bo
 
 ## Exercise 7
 
-1. In Browser.properties you can choose in which webbrowser you want to run your tests. 
-   Make sure your scenarios work on Firefox (firefox), Chrome (chrome) and InternetExplorer (ie) using the same code.
+1. In Browser.properties you can choose in which webbrowser you want to run your tests.  
+   Make sure your scenarios work on Firefox (firefox), Chrome (chrome) using the same code.
+> You can also try if it works on Internet Explorer (ie). Most likely you will see some error messages. Try to understand the error message and change your internet explorer settings to get your auto test running here as well.
 
 
 # Turn it up a notch
@@ -88,24 +91,35 @@ Random id's are occuring more often in websites, so is your test ready for this?
 ## Exercise 9
 
 1. Create a new scenario with steps to open the personal data page.
-2. Create a new step that allows you to fill in your personal data with a single step. Use a cucumber datatable to pass your test data to the steps file.
-> Use the first two methods explained on [this page](http://www.thinkcode.se/blog/2014/06/30/cucumber-data-tables) to experiment with the different methods of passing data to your steps file.
+2. Create a new step that allows you to fill in your personal data with a single step. Use the first method explained in the [DataTables](DataTables.md) document to pass your test data to the steps file.
 
 ## Exercise 10
 
-1. Create a new scenario with steps to open the personal data page.
-2. In your project structure, create a new package in **src/test/java/com/capgemini/** called **helpers** (a package is a folder).
-3. In this package create a new Java class and give it the name **PersonalData**.
-4. Add all the fields that you need to fill in the PersonalData page as private variables to the class `PersonalData`.
-5. Create a new step in your feature file to pass on PersonalData to your steps file.
-> You can now use the 3rd method described on [this page](http://www.thinkcode.se/blog/2014/06/30/cucumber-data-tables) to pass on the personal data to the steps file.
+1. Create a new scenario in the feature file. Now we are going to create a single step that will allow us to open the personal data page.
+2. Create a new step that allows you to fill in everything you need to reach the personal data page. Use the second method explained in the [DataTables](DataTables.md) document to pass your test data to the steps file.
+
 
 ## Exercise 11
 
-1. Use [faker](https://github.com/DiUS/java-faker) to generate random data for the personal data you created in Exercise 10.
-
+1. In the previous exercise we created one step to reach the personal data page. Now we will create one step to fill in all the personal data. Read method 3 explained in the [DataTables](DataTables.md) document.
+2. In your project structure, create a new package in **src/test/java/com/capgemini/** called **helpers** (a package is a folder).
+3. In this package create a new Java class and give it the name **PersonalData**.
+4. Add all the fields that you need to fill in the PersonalData page as private variables to the class `PersonalData`.
+5. Create a new step in your feature file to pass on PersonalData to your steps file. The Gherkin example is given in method 3 of the [DataTables](DataTables.md) document.
 
 ## Exercise 12
+
+When filling in large amounts of data (like personal data) your feature file can become quite cluttered with unnecessary information. It can then be an option to use method 4 in the [DataTables](DataTables.md) document.
+
+1. Create a new scenario.
+2. Use the step you created before to bring you the personal data page
+3. Create a new step as explained in method 4 of the [DataTables](DataTables.md) document in which you only fill in 'Marital status' and 'Income type'.
+4. Generate the rest of the data as explained.
+5. Fill in these values
+
+# Extra exercises
+
+## Exercise 13
 
 1. The website is responding too fast for your eyes to follow everything. 
    We can add screenshots at key points to see what is happening on each page. 
@@ -115,13 +129,6 @@ Random id's are occuring more often in websites, so is your test ready for this?
     File scrFile = ((TakesScreenshot) browser).getScreenshotAs(OutputType.FILE);
     FileUtils.copyFile(source, new File("C:\\temp\\screenshot" + System.currentTimeMillis() + ".jpg"));
     ```
-
-
-
-## Exercise 13
-
-1. Reduce your Gherkin to **Given When Then** (preferrably 3 lines, max 4/5 lines) such that the core of the test is clear.
-   This means that each method in your step function will do more than 1 action. In this way, your code has become more readable.
 
 ## Exercise 14
 
