@@ -114,7 +114,8 @@ When filling in large amounts of data (like personal data) your feature file can
 1. Create a new scenario.
 2. Use the step you created before to bring you the personal data page
 3. Create a new step as explained in method 4 of the [DataTables](DataTables.md) document in which you only fill in 'Marital status' and 'Income type'.
-4. Add the following method to the `PersonalData` class:
+4. Why would we only fill in these two fields in Gherkin?
+5. Add the following method to the `PersonalData` class:
 ```java
 public static PersonalData generateRemainingData(PersonalData initialData) {
     return DataHelper.generateRemainingData(initialData, () -> new PersonalData());
