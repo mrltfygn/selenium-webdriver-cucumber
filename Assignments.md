@@ -7,7 +7,7 @@
 1. In IntelliJ, navigate to **src/main/java/com.capgemini/App** and run App.Java.
 2. In a chrome browser navigate to "localhost:8080".
 
-## Exercise 1
+### Exercise 1
 
  1. In **loan.feature**, Right-click on the scenario name 'request a car loan' and choose 'Run Scenario...'
  2. As you can see the webpage gives an error message because the desired amount to borrow is lower than the minimum. 
@@ -24,7 +24,7 @@
  8. Is `.click()` the right method to use here?
  9. Run the scenario
 
-## Exercise 2
+### Exercise 2
 
 On the second page, we want to check if the 'Chosen loan type' and 'Amount to borrow' values are what we expect.
 
@@ -36,17 +36,17 @@ On the second page, we want to check if the 'Chosen loan type' and 'Amount to bo
 6. Run the scenario. Is your assertion working? How can you test this?
 7. Create steps that allow you to continue to the personal data page
 
-## Exercise 3
+### Exercise 3
 
 1. Create new steps for every field on the personal data page. For every step, change the selector and use the correct interaction.
 2. Can you upload a file?
 
-## Exercise 4
+### Exercise 4
 
 1. Parameterize the input data in the step "**And** the amount I want to borrow is '1000'". (See Exercise 1.2)
 2. Can you parameterize other data as well?
 
-## Exercise 5
+### Exercise 5
 
 1. Create a new scenario in the same feature file.
 2. Add the already existing step "**Given** I have opened the loan request page".
@@ -57,22 +57,22 @@ On the second page, we want to check if the 'Chosen loan type' and 'Amount to bo
 5. Parameterize the step so that you can click different options using the same step.
 6. Use Scenario Outlines to execute this scenario several times with different data.
 
-## Exercise 6
+### Exercise 6
 
 1. Create a new scenario in the same feature file.
 2. Reuse the steps from the first scenario, but choose different options and values where you can.
 3. Execute the new scenario.
 
-## Exercise 7
+### Exercise 7
 
 1. In Browser.properties you can choose in which webbrowser you want to run your tests.  
    Make sure your scenarios work on Firefox (firefox), Chrome (chrome) using the same code.
 > You can also try if it works on Internet Explorer (ie). Most likely you will see some error messages. Try to understand the error message and change your internet explorer settings to get your auto test running here as well.
 
 
-# Turn it up a notch
+## Turn it up a notch
 
-## Exercise 8
+### Exercise 8
 
 Random id's are occuring more often in websites, so is your test ready for this?
 
@@ -88,18 +88,18 @@ Random id's are occuring more often in websites, so is your test ready for this?
     ```
 3. Run your scenario's again, fix what you need to fix.
 
-## Exercise 9
+### Exercise 9
 
 1. Create a new scenario with steps to open the personal data page.
 2. Create a new step that allows you to fill in your personal data with a single step. Use the first method explained in the [DataTables](DataTables.md) document to pass your test data to the steps file.
 
-## Exercise 10
+### Exercise 10
 
 1. Create a new scenario in the feature file. Now we are going to create a single step that will allow us to open the personal data page.
 2. Create a new step that allows you to fill in everything you need to reach the personal data page. Use the second method explained in the [DataTables](DataTables.md) document to pass your test data to the steps file.
 
 
-## Exercise 11
+### Exercise 11
 
 1. In the previous exercise we created one step to reach the personal data page. Now we will create one step to fill in all the personal data. Read method 3 explained in the [DataTables](DataTables.md) document.
 2. In your project structure, create a new package in **src/test/java/com/capgemini/** called **helpers** (a package is a folder).
@@ -107,7 +107,7 @@ Random id's are occuring more often in websites, so is your test ready for this?
 4. Add all the fields that you need to fill in the PersonalData page as private variables to the class `PersonalData`.
 5. Create a new step in your feature file to pass on PersonalData to your steps file. The Gherkin example is given in method 3 of the [DataTables](DataTables.md) document.
 
-## Exercise 12
+### Exercise 12
 
 When filling in large amounts of data (like personal data) your feature file can become quite cluttered with unnecessary information. It can then be an option to use method 4 in the [DataTables](DataTables.md) document.
 
@@ -117,9 +117,9 @@ When filling in large amounts of data (like personal data) your feature file can
 4. Generate the rest of the data as explained.
 5. Fill in these values
 
-# Extra exercises
+## Extra exercises
 
-## Exercise 13
+### Exercise 13
 
 1. The website is responding too fast for your eyes to follow everything. 
    We can add screenshots at key points to see what is happening on each page. 
@@ -130,7 +130,7 @@ When filling in large amounts of data (like personal data) your feature file can
     FileUtils.copyFile(source, new File("C:\\temp\\screenshot" + System.currentTimeMillis() + ".jpg"));
     ```
 
-## Exercise 14
+### Exercise 14
 
 1. Create a BasePage as explained in [TAGuidelines.md](TAGuidelines.md)
 2. Create 4 different pages, 1 for each html page in the assignment and fill it with the selectors as shown in the coding guidelines of [TAGuidelines.md](TAGuidelines.md). 
