@@ -77,15 +77,15 @@ On the second page, we want to check if the 'Chosen loan type' and 'Amount to bo
 Random id's are occuring more often in websites, so is your test ready for this?
 
 1. Open **src/main/resources/index.html** and search for below code (near line 361);
-    ```javascript
-    $scope.rid = '';
-    $scope.rid2 = '';
-    ```
+```javascript
+$scope.rid = '';
+$scope.rid2 = '';
+```
 2. Replace the code to;
-    ```javascript
-    $scope.rid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + ':';
-    $scope.rid2 = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + ':';
-    ```
+```javascript
+$scope.rid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + ':';
+$scope.rid2 = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + ':';
+```
 3. Run your scenario's again, fix what you need to fix.
 
 ### Exercise 9
@@ -130,11 +130,11 @@ public static PersonalData generateRemainingData(PersonalData initialData) {
 1. The website is responding too fast for your eyes to follow everything. 
    We can add screenshots at key points to see what is happening on each page. 
    Try adding screenshots at key points of your scenario and save these to view later on.
-   ```java 
-    //Store a screenshot in my temp folder
-    File scrFile = ((TakesScreenshot) browser).getScreenshotAs(OutputType.FILE);
-    FileUtils.copyFile(source, new File("C:\\temp\\screenshot" + System.currentTimeMillis() + ".jpg"));
-    ```
+```java 
+//Store a screenshot in my temp folder
+File scrFile = ((TakesScreenshot) browser).getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(source, new File("C:\\temp\\screenshot" + System.currentTimeMillis() + ".jpg"));
+```
 
 ### Exercise 14
 
