@@ -30,11 +30,11 @@ On the second page, we want to check if the 'Chosen loan type' and 'Amount to bo
 
 1. Create a new step in your feature file in which you define what you expect to see for chosen loan type and amount to borrow.
 2. Use the autocomplete function in IntelliJ to help create the cucumber code and the method for this step in the Loan_Steps file.
-3. In the created method, initiate variables to store the expected values in (expectedLoanType, expectedAmountToBorrow)
+3. In the created method, initiate variables to store the expected values for chosen loan type and amount to borrow (e.g. expectedLoanType, expectedAmountToBorrow)
 4. Now try to retrieve the actual values for chosen loan type and amount to borrow from the website. Store these values in variables as well.
 5. Use the `Assert.assertEquals()` method to verify if the shown values are correct.
 6. Run the scenario. Is your assertion working? How can you test this?
-7. Create steps that allows you to continue to the personal data page
+7. Create steps that allow you to continue to the personal data page
 
 ## Exercise 3
 
