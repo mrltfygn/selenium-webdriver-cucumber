@@ -90,18 +90,18 @@ $scope.rid2 = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) +
 
 ### Exercise 9
 
-1. Create a new scenario with steps to open the personal data page.
+1. Create a new scenario with steps to open the personal data page. Use your existing previous steps for this.
 2. Create a new step that allows you to fill in your personal data with a single step. Use the first method explained in the [DataTables](DataTables.md) document to pass your test data to the steps file.
 
 ### Exercise 10
 
-1. Create a new scenario in the feature file. Now we are going to create a single step that will allow us to open the personal data page.
+1. Create a new scenario in the feature file. 
 2. Create a new step that allows you to fill in everything you need to reach the personal data page. Use the second method explained in the [DataTables](DataTables.md) document to pass your test data to the steps file.
 
 
 ### Exercise 11
 
-1. In the previous exercise we created one step to reach the personal data page. Now we will create one step to fill in all the personal data. Read method 3 explained in the [DataTables](DataTables.md) document.
+1. Read method 3 explained in the [DataTables](DataTables.md) document.
 2. In your project structure, create a new package in **src/test/java/com/capgemini/** called **helpers** (a package is a folder).
 3. In this package create a new Java class and give it the name **PersonalData**.
 4. Add all the fields that you need to fill in the PersonalData page as private variables to the class `PersonalData`.
@@ -112,7 +112,7 @@ $scope.rid2 = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) +
 When filling in large amounts of data (like personal data) your feature file can become quite cluttered with unnecessary information. It can then be an option to use method 4 in the [DataTables](DataTables.md) document.
 
 1. Create a new scenario.
-2. Use the step you created before to bring you the personal data page
+2. Use the step you created before to bring you to the personal data page
 3. Create a new step as explained in method 4 of the [DataTables](DataTables.md) document in which you only fill in 'Marital status' and 'Income type'.
 4. Why would we only fill in these two fields in Gherkin?
 5. Add the following method to the `PersonalData` class:
