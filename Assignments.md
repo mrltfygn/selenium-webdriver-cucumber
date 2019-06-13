@@ -121,8 +121,8 @@ public static PersonalData generateRemainingData(PersonalData initialData) {
     return DataHelper.generateRemainingData(initialData, () -> new PersonalData());
 }
 ```
-5. Now you can generate the remaining data as explained in method 4. Note that the generic DataHelper.generateRemainingData method already exists in this framework.
-6. Fill in these values
+6. Now you can generate the remaining data as explained in method 4. Note that the generic DataHelper.generateRemainingData method already exists in this framework.
+7. Fill in these values
 
 ## Extra exercises
 
