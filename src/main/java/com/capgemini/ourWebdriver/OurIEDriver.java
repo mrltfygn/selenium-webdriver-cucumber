@@ -66,6 +66,12 @@ public class OurIEDriver extends InternetExplorerDriver implements OurWebDriver 
         ((JavascriptExecutor) browser).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    public WebElement scrollToElement(final By by) {
+        final WebElement element = browser.findElement(by);
+        scrollToElement(element);
+        return element;
+    }
+
     public void waitForAjax() {
         final WebDriverWait webDriverWait = new WebDriverWait(browser, EXPLICIT_WAIT_TIMEOUT);
         webDriverWait.until(new ExpectedCondition<Boolean>() {

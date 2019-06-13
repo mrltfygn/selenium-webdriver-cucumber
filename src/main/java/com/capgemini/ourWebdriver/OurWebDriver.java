@@ -25,6 +25,8 @@ public interface OurWebDriver extends WebDriver {
 
     void scrollToElement(WebElement element);
 
+    WebElement scrollToElement(By by);
+
     void waitForAjax();
 
 }
