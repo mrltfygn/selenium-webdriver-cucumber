@@ -60,6 +60,12 @@ public class OurFirefoxDriver extends FirefoxDriver implements OurWebDriver {
         return wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
+    public WebElement scrollToElement(final By by) {
+        final WebElement element = browser.findElement(by);
+        scrollToElement(element);
+        return element;
+    }
+
     public void scrollToElement(final WebElement element) {
         ((JavascriptExecutor) browser).executeScript("arguments[0].scrollIntoView(true);", element);
     }
