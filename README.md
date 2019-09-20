@@ -18,10 +18,10 @@ Cuke-Up Your Tests
 - Press Clone
 - When the following pop-up comes up select 'No': 
 
-![versioncontrolcheckoutdone](https://user-images.githubusercontent.com/15871496/39982468-bf4640f6-5754-11e8-9c71-2c9970159400.png)   
+![versioncontrolcheckoutdone](https://user-content.gitlab-static.net/64c17cbbe30d2d474053ea05de843eddd2666d4a/68747470733a2f2f692e696d6775722e636f6d2f6b555842336e502e706e67)   
 
 
-- In your IntelliJ main screen choose 'Open' and navigate to the folder to which you cloned the project in step 3.
+- In your IntelliJ main screen choose 'Open' and navigate to the folder to which you cloned the project in step 3. Select the pom.xml file and choose "Open as project".
 - If it is your first IntelliJ project then in IntelliJ:
     - Select 'Open' project and browse to the test project folder you just created and open the folder
     - Open project structure (CTRL + Shift + Alt + S), navigate to the 'Project' tab, choose new in Project SDK section, select JDK and direct to your java/jdk folder
