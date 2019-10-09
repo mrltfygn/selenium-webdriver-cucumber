@@ -48,7 +48,7 @@ On page 2, we want to check if the 'Chosen loan type' and 'Amount to borrow' val
 
 ### Exercise 5
 
-1. Create a new scenario in the same feature file.
+1. Create a new scenario in the same feature file. Give the scenario a name.
 2. Add the already existing step "**Given** I have opened the loan request page".
 3. Create a new step after "**Given** I have opened the loan request page" to click an option under "Why do you need a loan?".
 > In some cases it is just not possible to find a unique selector for the element you want to interact with. In these cases, the element text can be used to identify the element. Use the Cheatsheet.docx for help on how to click the button with the desired text.
