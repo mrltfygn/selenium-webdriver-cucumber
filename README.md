@@ -14,7 +14,7 @@ Cuke-Up Your Tests
 
 - Start up IntelliJ
 - Choose 'Get from VCS'
-- Fill in URL "https://github.com/mazininaad/cukeupyourtests.git"
+- Fill in URL "https://gitlab.com/the-ta-crowd/cuke-up-your-tests"
 - Choose a folder to clone the project to on your machine (IntelliJ will suggest a default location)
 - Press Clone
 - If it is your first IntelliJ project then in IntelliJ:
