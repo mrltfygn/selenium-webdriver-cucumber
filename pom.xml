@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.capgemini</groupId>
-    <artifactId>cukeupyourtests</artifactId>
-    <name>cukeupyourtests</name>
+    <artifactId>seleniumcucumbertraining</artifactId>
+    <name>seleniumcucumbertraining</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <url>http://maven.apache.org</url>
