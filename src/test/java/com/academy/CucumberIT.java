@@ -1,4 +1,4 @@
-package com.capgemini;
+package com.academy;
 
 import cucumber.api.CucumberOptions;
 import org.junit.runner.RunWith;

@@ -1,33 +1,33 @@
-package com.capgemini.ourWebdriver;
+package com.academy.ourWebdriver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.capgemini.ourWebdriver.BrowserFactory.getDriverFile;
+import static com.academy.ourWebdriver.BrowserFactory.getDriverFile;
 
 /**
  * Created by dlammers on 2/27/2017.
  */
-public class OurIEDriver extends InternetExplorerDriver implements OurWebDriver {
+public class OurChromeDriver extends ChromeDriver implements OurWebDriver {
 
-    private static OurIEDriver browser;
+    private static OurChromeDriver browser;
 
-    private OurIEDriver() {
+    private OurChromeDriver() {
 
     }
 
-    static OurIEDriver getBrowser() {
-        System.setProperty("webdriver.ie.driver", getDriverFile("internetexplorer"));
+    static OurChromeDriver getBrowser() {
+        System.setProperty("webdriver.chrome.driver", getDriverFile("chrome"));
         if (browser == null) {
-            browser = new OurIEDriver();
+            browser = new OurChromeDriver();
         } else if (browser.getSessionId() == null) {
-            browser = new OurIEDriver();
+            browser = new OurChromeDriver();
         }
         return browser;
     }

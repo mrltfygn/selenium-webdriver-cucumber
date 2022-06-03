@@ -1,10 +1,10 @@
 # Assignments
 
-> All the files which you will need to edit in these assignments are located in **src/test/java/com/capgemini/steps** or **src/test/resources/features**.
+> All the files which you will need to edit in these assignments are located in **src/test/java/com/academy/steps** or **src/test/resources/features**.
 
 ## Getting started
 
-1. In IntelliJ, navigate to **src/main/java/com.capgemini/App** and run App.Java.
+1. In IntelliJ, navigate to **src/main/java/com.academy/App** and run App.Java.
 2. In a chrome browser navigate to "localhost:8080".
 
 ### Exercise 1
@@ -14,7 +14,7 @@
     Update the step "**And** the amount I want to borrow is '1000'" so that this error message is no longer given. Run the scenario to check that it works.
 > The steps are located in **steps/loan_Steps**
  3. Create the step "**And** I continue to explanation" (just remove the # in the feature file). The background color of the step will turn into brown box, this means that there is no java connected to this step. 
-    Use Alt + Enter, choose 'Create step definition', choose loan_steps (com.capgemini.steps).
+    Use Alt + Enter, choose 'Create step definition', choose loan_steps (com.academy.steps).
  4. Depending on the version of IntelliJ you have, there will be generated java code `throw new PendingException();`. Remove this code if generated. This exception is generated to make sure that you understand java code a bit before you can run a successful execution.
  5. Inside the body of the newly generated method `public void iContinueToExplanation()`, copy paste the code inside the `iSelectLoanType()` method. You will need to change the CSS selector to find the proper element. This is explained in the next steps.
  6. Switch to your Chrome browser (where you have opened "localhost:8080")
@@ -103,7 +103,7 @@ $scope.rid2 = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) +
 ### Exercise 11
 
 1. Read method 3 explained in the [DataTables](https://academy.capgemini.nl/blog/different-methods-implement-cucumber-data-tables-java) document.
-2. In your project structure, create a new package in **src/test/java/com/capgemini/** called **helpers** (a package is a folder).
+2. In your project structure, create a new package in **src/test/java/com/academy/** called **helpers** (a package is a folder).
 3. In this package create a new Java class and give it the name **PersonalData**.
 4. Add all the fields that you need to fill in the PersonalData page as private variables to the class `PersonalData`.
 5. Create a new step in your feature file to pass on PersonalData to your steps file. The Gherkin example is given in method 3 of the [DataTables](https://academy.capgemini.nl/blog/different-methods-implement-cucumber-data-tables-java) document.

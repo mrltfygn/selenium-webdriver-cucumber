@@ -1,4 +1,4 @@
-package com.capgemini;
+package com.academy;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

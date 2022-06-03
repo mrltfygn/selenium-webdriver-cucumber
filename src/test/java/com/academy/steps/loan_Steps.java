@@ -1,6 +1,6 @@
-package com.capgemini.steps;
+package com.academy.steps;
 
-import com.capgemini.ourWebdriver.BrowserFactory;
+import com.academy.ourWebdriver.BrowserFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import org.openqa.selenium.By;

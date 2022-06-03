@@ -1,4 +1,4 @@
-package com.capgemini.helpers;
+package com.academy.helpers;
 
 import org.junit.Assert;
 

@@ -1,12 +1,11 @@
-package com.capgemini.ourWebdriver;
+package com.academy.ourWebdriver;
 
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 
 import java.io.*;
-import java.net.MalformedURLException;
 import java.util.Properties;
 
-import static com.capgemini.utils.FileHelper.getRootPath;
+import static com.academy.utils.FileHelper.getRootPath;
 
 public class BrowserFactory {
 

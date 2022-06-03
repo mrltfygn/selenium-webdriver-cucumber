@@ -1,4 +1,4 @@
-package com.capgemini.ourWebdriver;
+package com.academy.ourWebdriver;
 
 import cucumber.api.java.After;
 import org.openqa.selenium.WebDriver;

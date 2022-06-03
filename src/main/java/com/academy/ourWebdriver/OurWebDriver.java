@@ -1,4 +1,4 @@
-package com.capgemini.ourWebdriver;
+package com.academy.ourWebdriver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

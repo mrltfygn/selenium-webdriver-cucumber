@@ -1,33 +1,31 @@
-package com.capgemini.ourWebdriver;
+package com.academy.ourWebdriver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.capgemini.ourWebdriver.BrowserFactory.getDriverFile;
-
 /**
  * Created by dlammers on 2/27/2017.
  */
-public class OurChromeDriver extends ChromeDriver implements OurWebDriver {
+public class OurFirefoxDriver extends FirefoxDriver implements OurWebDriver {
 
-    private static OurChromeDriver browser;
+    private static OurFirefoxDriver browser;
 
-    private OurChromeDriver() {
+    private OurFirefoxDriver() {
 
     }
 
-    static OurChromeDriver getBrowser() {
-        System.setProperty("webdriver.chrome.driver", getDriverFile("chrome"));
+    static OurFirefoxDriver getBrowser() {
+        System.setProperty("webdriver.gecko.driver", BrowserFactory.getDriverFile("gecko"));
         if (browser == null) {
-            browser = new OurChromeDriver();
+            browser = new OurFirefoxDriver();
         } else if (browser.getSessionId() == null) {
-            browser = new OurChromeDriver();
+            browser = new OurFirefoxDriver();
         }
         return browser;
     }
@@ -62,14 +60,14 @@ public class OurChromeDriver extends ChromeDriver implements OurWebDriver {
         return wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
-    public void scrollToElement(final WebElement element) {
-        ((JavascriptExecutor) browser).executeScript("arguments[0].scrollIntoView(true);", element);
-    }
-
     public WebElement scrollToElement(final By by) {
         final WebElement element = browser.findElement(by);
         scrollToElement(element);
         return element;
+    }
+
+    public void scrollToElement(final WebElement element) {
+        ((JavascriptExecutor) browser).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     public void waitForAjax() {
@@ -83,5 +81,6 @@ public class OurChromeDriver extends ChromeDriver implements OurWebDriver {
             }
         });
     }
+
 
 }

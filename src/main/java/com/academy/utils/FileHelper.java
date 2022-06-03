@@ -1,7 +1,4 @@
-package com.capgemini.utils;
-
-import java.io.File;
-import java.io.IOException;
+package com.academy.utils;
 
 public class FileHelper {
 
