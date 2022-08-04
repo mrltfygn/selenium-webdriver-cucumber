@@ -15,21 +15,20 @@
 > The steps are located in **steps/loan_Steps**
  3. Create the step "**And** I continue to explanation" (just remove the # in the feature file). The background color of the step will turn into brown box, this means that there is no java connected to this step. 
     Use Alt + Enter, choose 'Create step definition', choose loan_steps (com.academy.steps).
- 4. Depending on the version of IntelliJ you have, there will be generated java code `throw new PendingException();`. Remove this code if generated. This exception is generated to make sure that you understand java code a bit before you can run a successful execution.
- 5. Inside the body of the newly generated method `public void iContinueToExplanation()`, copy paste the code inside the `iSelectLoanType()` method. You will need to change the CSS selector to find the proper element. This is explained in the next steps.
- 6. Switch to your Chrome browser (where you have opened "localhost:8080")
+ 4. Inside the body of the newly generated method `public void iContinueToExplanation()`, type the following code: `browser.findElement(By.cssSelector("yourCssSelector"))`. You will need to change the CSS selector to find the proper element. This is explained in the next steps.
+ 5. Switch to your Chrome browser (where you have opened "localhost:8080")
     In Chrome right-click the "Continue to explanation" button and select "Inspect" to identify the selector for this button.
- 7. Copy the CSS selector and replace the CSS selector in IntelliJ (see step 5).
- 8. Is `.click()` the right method to use here?
- 9. Run the scenario
+ 6. Copy the CSS selector and replace the CSS selector in IntelliJ (see step 4).
+ 7. At the end of your code line `browser.findElement(By.cssSelector("yourCssSelector"))` you can use the dot operator. Which action do you want to do on this element?
+ 8. Run the scenario
 
 ### Exercise 2
 
 On page 2, we want to check if the 'Chosen loan type' and 'Amount to borrow' values are as expected.
 
 1. Create a new step in your feature file: Then I expect the chosen loantype 'Car-loan' and chosen amount '2000'
-2. Use the autocomplete function in IntelliJ to help create the cucumber code and the method for this step.
-3. In the step, create variables to store the expected values (e.g. expectedLoanType, expectedAmountToBorrow).
+2. Use the autocomplete function in IntelliJ (ALT + Enter) to help create the cucumber code and the method for this step.
+3. In the step, create variables to store the expected values (e.g. expectedLoanType, expectedAmountToBorrow) and actual values.
 4. Retrieve the actual values for chosen loan type and amount to borrow from the website and store these in variables (e.g. actualLoanType, actualAmountToBorrow)
 > Use the dot operator after findElement to retrieve the text of the element.
 5. Use the `Assert.assertEquals()` method to verify if the shown values are correct.
