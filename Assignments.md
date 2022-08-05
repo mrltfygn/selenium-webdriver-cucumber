@@ -67,8 +67,6 @@ On page 2, we want to check if the 'Chosen loan type' and 'Amount to borrow' val
 
 1. In Browser.properties you can choose in which webbrowser you want to run your tests.  
    Make sure your scenarios work on Firefox (firefox), Chrome (chrome) using the same code.
-> You can also try if it works on Internet Explorer (ie). Most likely you will see some error messages. Try to understand the error message and change your internet explorer settings to get your auto test running here as well.
-
 
 ## Turn it up a notch
 
