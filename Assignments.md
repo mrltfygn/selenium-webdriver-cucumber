@@ -31,7 +31,7 @@ On page 2, we want to check if the 'Chosen loan type' and 'Amount to borrow' val
 3. In the step, create variables to store the expected values (e.g. expectedLoanType, expectedAmountToBorrow) and actual values.
 4. Retrieve the actual values for chosen loan type and amount to borrow from the website and store these in variables (e.g. actualLoanType, actualAmountToBorrow)
 > Use the dot operator after findElement to retrieve the text of the element.
-5. Use the `Assert.assertEquals()` method to verify if the shown values are correct.
+5. Use the `Assertions.assertEquals()` method to verify if the shown values are correct.
 6. Run the scenario. Is your assertion working? How can you test this?
 7. Create steps that allow you to continue to the personal data page.
 

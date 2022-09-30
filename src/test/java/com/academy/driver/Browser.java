@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -88,23 +89,23 @@ public class Browser {
      * Finds all web elements that match the CSS selector.
      * Waits for the page to be fully loaded before searching the web elements.
      *
-     * @param selector  CSS selector
+     * @param by        CSS selector or XPath
      * @return          List of all matching elements
      */
-    public List<WebElement> findElements(String selector) {
+    public List<WebElement> findElements(By by) {
         wait.until(webDriver -> ((JavascriptExecutor) webDriver)
                 .executeScript(GET_PAGE_READYSTATE).equals(READYSTATE_COMPLETE));
-        return driver.findElements(By.cssSelector(selector));
+        return driver.findElements(by);
     }
 
     /**
      * Returns the first web element that matches the CSS selector.
      * Waits for the page to be fully loaded before searching the web element.
      *
-     * @param selector  CSS selector
+     * @param by        CSS selector or XPath
      * @return          WebElement
      */
-    public WebElement findElement(String selector) {
+    public WebElement findElement(By by) {
         // Hard wait to slow down the tests so trainees can see what's going on.
         try {
             Thread.sleep(500);
@@ -114,7 +115,7 @@ public class Browser {
 
         wait.until(webDriver -> ((JavascriptExecutor) webDriver)
                 .executeScript(GET_PAGE_READYSTATE).equals(READYSTATE_COMPLETE));
-        return driver.findElement(By.cssSelector(selector));
+        return driver.findElement(by);
     }
 
     public String getPageSource() {
@@ -147,6 +148,14 @@ public class Browser {
 
     public WebDriver.Options manage() {
         return driver.manage();
+    }
+
+    public void waitForElementToBeClickable(By by) {
+        wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
+
+    public void waitForElementToBeVisible(By by) {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
 
     public byte[] makeScreenshot() {
