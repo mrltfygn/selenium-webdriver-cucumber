@@ -4,127 +4,130 @@
 
     <groupId>training.academy</groupId>
     <artifactId>seleniumcucumbertraining</artifactId>
-    <name>seleniumcucumbertraining</name>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <url>http://maven.apache.org</url>
+    <name>selenium-cucumber-training</name>
+    <version>2.0-SNAPSHOT</version>
 
     <properties>
-        <version.cucumber>1.2.5</version.cucumber>
-        <version.selenium>3.5.3</version.selenium>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <selenium.version>4.4.0</selenium.version>
+        <cucumber.version>7.8.0</cucumber.version>
+        <webdrivermanager.version>5.3.0</webdrivermanager.version>
+        <junit.version>5.9.1</junit.version>
+        <junit-platform.version>1.9.1</junit-platform.version>
+        <maven-surefire.version>3.0.0-M7</maven-surefire.version>
+        <maven-help.version>3.1.0</maven-help.version>
+        <spring-boot.version>2.7.4</spring-boot.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${version.cucumber}</version>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${version.cucumber}</version>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-picocontainer</artifactId>
-            <version>${version.cucumber}</version>
-        </dependency>
-        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>${version.selenium}</version>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-server</artifactId>
-            <version>${version.selenium}</version>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-firefox-driver</artifactId>
-            <version>${version.selenium}</version>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-chrome-driver</artifactId>
-            <version>${version.selenium}</version>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-htmlunit-driver</artifactId>
-            <version>2.52.0</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>0.15</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>1.3</version>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit-platform.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.0.5.RELEASE</version>
+            <version>${spring-boot.version}</version>
         </dependency>
+
     </dependencies>
+
+    <profiles>
+        <!-- The profiles below are used to run tests on multiple browsers.
+             Each profile is activated by passing a browser property with the corresponding value.
+             So for example: 'mvn test -Dbrowser=chrome' activates the chrome-integration-test profile.
+             The triggered profile then refers to that browser's corresponding TestRunner -->
+        <profile>
+            <id>chrome-integration-test</id>
+            <activation>
+                <property>
+                    <name>browser</name>
+                    <value>chrome</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${maven-surefire.version}</version>
+                        <configuration>
+                            <test>nl.example.TestRunnerChrome</test>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>firefox-integration-test</id>
+            <activation>
+                <property>
+                    <name>browser</name>
+                    <value>firefox</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${maven-surefire.version}</version>
+                        <configuration>
+                            <test>nl.example.TestRunnerFirefox</test>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>com.github.webdriverextensions</groupId>
-                <artifactId>webdriverextensions-maven-plugin</artifactId>
-                <version>3.1.3</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>install-drivers</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <drivers>
-                        <driver>
-                            <name>internetexplorerdriver</name>
-                            <bit>32</bit>
-                        </driver>
-                        <driver>
-                            <name>chromedriver</name>
-                        </driver>
-                        <driver>
-                            <name>geckodriver</name>
-                        </driver>
-                    </drivers>
-                </configuration>
-            </plugin>
+            <!-- display active profile in compile phase -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.0</version>
+                <artifactId>maven-help-plugin</artifactId>
+                <version>${maven-help.version}</version>
                 <executions>
                     <execution>
+                        <id>show-profiles</id>
+                        <phase>compile</phase>
                         <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
+                            <goal>active-profiles</goal>
                         </goals>
                     </execution>
                 </executions>

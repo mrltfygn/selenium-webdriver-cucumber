@@ -22,7 +22,7 @@ Cuke-Up Your Tests
 
 - Open Settings (CTRL + ALT + S), navigate to 'Plugins' and install the plugins: `Gherkin` and `Cucumber for Java` (**Don't** install the `Substeps` plugin)
 - Open the Maven Projects Tool window (Navigation bar > `View` > `Tool Windows` > `Maven Projects`), this will open a view on the right side of the screen.
-- Double click under `seleniumcucumbertraining` > `Lifecycle` the `compile` option. This will install the drivers of Chrome, Firefox and InternetExplorer. _If the drivers don't download you might be behind a proxy, visit [the plugin page](https://github.com/webdriverextensions/webdriverextensions-maven-plugin#using-a-proxy) for help_.
+- Double click under `seleniumcucumbertraining` > `Lifecycle` the `compile` option.
 
 
 ## Assignments

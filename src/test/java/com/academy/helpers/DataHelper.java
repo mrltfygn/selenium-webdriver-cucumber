@@ -1,6 +1,6 @@
 package com.academy.helpers;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import java.lang.reflect.Field;
 import java.util.function.Supplier;
@@ -29,7 +29,7 @@ public class DataHelper {
                 }
             }
         } catch (IllegalAccessException e) {
-            Assert.fail("Error occured in generateRemainingData while trying to copy data from initial data to generated data");
+            Assertions.fail("Error occured in generateRemainingData while trying to copy data from initial data to generated data");
         }
         return result;
     }
