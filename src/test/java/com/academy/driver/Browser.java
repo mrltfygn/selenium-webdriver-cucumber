@@ -105,8 +105,9 @@ public class Browser {
      * @return          WebElement
      */
     public WebElement findElement(String selector) {
+        // Hard wait to slow down the tests so trainees can see what's going on.
         try {
-            Thread.sleep(2000);
+            Thread.sleep(500);
         } catch (Exception e) {
 
         }
