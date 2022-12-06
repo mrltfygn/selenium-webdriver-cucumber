@@ -87,34 +87,21 @@ public class Browser {
 
     /**
      * Finds all web elements that match the CSS selector.
-     * Waits for the page to be fully loaded before searching the web elements.
      *
      * @param by        CSS selector or XPath
      * @return          List of all matching elements
      */
     public List<WebElement> findElements(By by) {
-        wait.until(webDriver -> ((JavascriptExecutor) webDriver)
-                .executeScript(GET_PAGE_READYSTATE).equals(READYSTATE_COMPLETE));
         return driver.findElements(by);
     }
 
     /**
      * Returns the first web element that matches the CSS selector.
-     * Waits for the page to be fully loaded before searching the web element.
      *
      * @param by        CSS selector or XPath
      * @return          WebElement
      */
     public WebElement findElement(By by) {
-        // Hard wait to slow down the tests so trainees can see what's going on.
-        try {
-            Thread.sleep(500);
-        } catch (Exception e) {
-
-        }
-
-        wait.until(webDriver -> ((JavascriptExecutor) webDriver)
-                .executeScript(GET_PAGE_READYSTATE).equals(READYSTATE_COMPLETE));
         return driver.findElement(by);
     }
 
