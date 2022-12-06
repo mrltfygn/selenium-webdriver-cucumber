@@ -17,11 +17,11 @@ public class WebHook {
     @After
     public void afterScenario(Scenario scenario) throws InterruptedException {
         Thread.sleep(5000);
-        browser.quit();
         if (scenario.isFailed()) {
             byte[] screenshot = browser.makeScreenshot();
             scenario.attach(screenshot, "image/png", "name");
         }
+        browser.quit();
     }
 
 }
