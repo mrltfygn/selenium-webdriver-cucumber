@@ -1,4 +1,4 @@
-package com.capgemini.helpers;
+package com.academy.helpers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.DefaultDataTableCellTransformer;
