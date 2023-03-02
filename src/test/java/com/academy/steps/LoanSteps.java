@@ -3,10 +3,9 @@ package com.academy.steps;
 import com.academy.driver.Browser;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
-public class loanSteps {
+public class LoanSteps {
     private final Browser browser = Browser.getInstance();
 
     @Given("I have opened the loan request page")
