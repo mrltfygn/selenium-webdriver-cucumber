@@ -18,7 +18,7 @@ import java.util.Set;
 /**
  * This class is responsible for all interactions with a web browser.
  */
-public class Browser implements WebDriver {
+public class Browser {
 
     private static Browser browser;
     private final FileReader fileReader = FileReader.getInstance();
