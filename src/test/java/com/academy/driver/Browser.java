@@ -4,7 +4,9 @@ import com.academy.helpers.FileReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -54,8 +56,13 @@ public class Browser {
         BrowserType browserType = BrowserType.valueOf(fileReader.getProperty(BROWSER_TYPE_PROPERTY_NAME).toUpperCase());
 
         if (browserType.equals(BrowserType.CHROME)) {
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("-remote-allow-origins=*");
+            DesiredCapabilities cp = new DesiredCapabilities();
+            cp.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+            chromeOptions.merge(cp);
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(chromeOptions);
         } else if (browserType.equals(BrowserType.FIREFOX)) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
@@ -65,7 +72,6 @@ public class Browser {
         } else {
             throw new UnsupportedOperationException("BrowserType: " + browserType.name() + " not supported.");
         }
-
         wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT_TIME));
         driver.manage().window().maximize();
     }
@@ -88,8 +94,8 @@ public class Browser {
     /**
      * Finds all web elements that match the CSS selector.
      *
-     * @param by        CSS selector or XPath
-     * @return          List of all matching elements
+     * @param by CSS selector or XPath
+     * @return List of all matching elements
      */
     public List<WebElement> findElements(By by) {
         return driver.findElements(by);
@@ -98,8 +104,8 @@ public class Browser {
     /**
      * Returns the first web element that matches the CSS selector.
      *
-     * @param by        CSS selector or XPath
-     * @return          WebElement
+     * @param by CSS selector or XPath
+     * @return WebElement
      */
     public WebElement findElement(By by) {
         return driver.findElement(by);
