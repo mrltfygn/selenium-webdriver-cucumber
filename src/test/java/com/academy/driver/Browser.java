@@ -72,8 +72,6 @@ public class Browser {
         } else {
             throw new UnsupportedOperationException("BrowserType: " + browserType.name() + " not supported.");
         }
-
-
         wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT_TIME));
         driver.manage().window().maximize();
     }
